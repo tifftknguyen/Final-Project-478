@@ -1,6 +1,7 @@
 # Tiffany Nguyen
 # Giselle Hernandez
 
+version: "3.8"
 
 services:
   fsguardian:
