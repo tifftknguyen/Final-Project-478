@@ -1,5 +1,6 @@
 # GISELLE HERNANDEZ
 # TIFFANY NGUYEN
+# DOCKER-COMPOSE.YML FILE
 version: "3.8"
 
 services:
@@ -10,9 +11,12 @@ services:
 
     command: >
       sh -c "
+        echo 'Compiling Format String Guardian...' &&
+        gcc -o fsguard scanner/format_string_guardian.c &&
         echo 'Running all test cases...' &&
         for f in tests/safe/*.c tests/unsafe/*.c; do
-          echo '\n--- Scanning:' $$f '---';
+          echo ''; 
+          echo '--- Scanning:' $$f '---';
           ./fsguard $$f;
         done
       "
