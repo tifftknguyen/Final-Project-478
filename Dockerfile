@@ -14,3 +14,4 @@ RUN gcc -o fsguard scanner/format_string_guardian.c
 
 # running command
 CMD ["./fsguard"]
+

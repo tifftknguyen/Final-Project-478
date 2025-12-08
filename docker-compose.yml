@@ -1,1 +1,23 @@
+# Tiffany Nguyen
+# Giselle Hernandez
 
+version: "3.8"
+
+services:
+  fsguardian:
+    build: .
+    container_name: fsguardian_runner
+    working_dir: /app
+    command: >
+      sh -c "
+        set -e
+        echo 'Compiling Format String Guardian...' &&
+        gcc -Wall -Wextra -O2 -o fsguard ./format_string_guardian.c &&
+        echo 'Running all test cases...' &&
+        for f in tests/safe/*.c tests/unsafe/*.c; do
+          printf '\n--- Scanning: %s ---\n' \"$f\"
+          ./fsguard \"$f\"
+        done
+      "
+    volumes:
+      - .:/app
