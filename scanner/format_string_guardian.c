@@ -193,7 +193,7 @@ int check_non_literal_printf(const char *line, const char *filename, int line_nu
             printf("USAGE: %s <tests-directory>\n", argv[0]);
             return -1;
         }
-        printf("=== Format String Guardian (V2 - Security Hardened) ===\n");
+        printf("=== Format String Guardian ===\n");
         printf("Scanning file: %s\n\n", argv[1]);
 
         warnings = scan_file(argv[1]);
@@ -205,9 +205,9 @@ int check_non_literal_printf(const char *line, const char *filename, int line_nu
 
         printf("\n=== Scan Summary ===\n");
         if (warnings == 0) {
-            printf("No obvious format-string or buffer overflow problems found. \n");
+            printf("No format-string or buffer overflow problems found. \n");
         } else {
-            printf("Total warnings: %d  (Manual review recommended to check for False Positives) \n", warnings);
+            printf("Total warnings: %d  (Check for False positives!) \n", warnings);
         }
 
     return 0;
