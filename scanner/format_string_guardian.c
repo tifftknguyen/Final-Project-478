@@ -2,17 +2,16 @@
 // Tiffany Nguyen
 // CECS 478 Final Project 
  
-// Format String Guardian :
-// Using AST-based static scanner to test for unsafe string formatting 
-// As stated in our final proposal
+// Format String Guardian:
+// Using lightweight scanner to test for unsafe string formatting 
 
-// libraries 
+// LIBRARIES 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h> 
 #include <ctype.h> 
 
-// UTILITY FUNC
+// UTILITY FUNCTOIN
 
 // FINDS FIRST NON-WHITESPACE CHAR
 char *trim_whitespace(char *line) {
@@ -97,9 +96,9 @@ int check_non_literal_printf(const char *line, const char *filename, int line_nu
             pos++;
         }
 
-        // IF FIRST NON-WHITESPACE CHAR ISN'T A QUOTE, WARN
+        // IF FIRST NON-WHITESPACE CHAR ISN'T A QUOTE, WARNING
         if (*pos != '"' && *pos != '\0') {
-            printf("[WARNING] %s:%d  VULNERABILITY: printf/fprintf WITH NON-LITERAL FORMAT (POSSIBLE USER-CONTROLLED INPUT). MITIGATION: USE printf(\"%%s\", input).\n",
+            printf("[WARNING] %s:%d  VULNERABILITY: printf/fprintf WITH NON-LITERAL FORMAT (POSSIBLE HACKER & CRACKER CONTROL).\n",
                    filename, line_number);
             return 1;
         }
