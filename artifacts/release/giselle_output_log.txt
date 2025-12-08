@@ -1,0 +1,302 @@
+This is evidence of Giselle Hernandez's output log, ran on her terminal
+
+(base) gisellehernandez@MacBook-Air Final-Project-478 % docker-compose up --build                                      
+WARN[0000] /Users/gisellehernandez/Final-Project-478/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+#1 [internal] load local bake definitions
+#1 reading from stdin 571B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 337B 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/gcc:latest
+#3 DONE 0.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [1/4] FROM docker.io/library/gcc:latest@sha256:a653be44b41f227f803604e625b7234be4b5d5747a19494489b53010bbf2010b
+#6 resolve docker.io/library/gcc:latest@sha256:a653be44b41f227f803604e625b7234be4b5d5747a19494489b53010bbf2010b
+#6 resolve docker.io/library/gcc:latest@sha256:a653be44b41f227f803604e625b7234be4b5d5747a19494489b53010bbf2010b 0.1s done
+#6 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 18.20kB 0.0s done
+#5 DONE 0.1s
+
+#7 [2/4] WORKDIR /app
+#7 CACHED
+
+#8 [3/4] COPY . /app
+#8 DONE 0.1s
+
+#9 [4/4] RUN gcc -o fsguard scanner/format_string_guardian.c
+#9 DONE 0.7s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 0.4s done
+#10 exporting manifest sha256:881132fc18a9f10f4263680e1286d208b63cf903b002ac66b3d98b2ba0635ce4 0.0s done
+#10 exporting config sha256:2eb547ac57c3d694e2b9c9f2ba915a88f117299d667c95c05ce2a7cf832d9f03 0.1s done
+#10 exporting attestation manifest sha256:bf6e5e2fc0eb657826b3ff600dcf1f3dd0adca12b2ac6b602626f8da2904f5b0
+#10 exporting attestation manifest sha256:bf6e5e2fc0eb657826b3ff600dcf1f3dd0adca12b2ac6b602626f8da2904f5b0 0.1s done
+#10 exporting manifest list sha256:6836c8ed43090c8819a04f124873de8a0b6a32e1c0c67c1272c3399ccbcee2d6 0.0s done
+#10 naming to docker.io/library/final-project-478-fsguardian:latest done
+#10 unpacking to docker.io/library/final-project-478-fsguardian:latest
+#10 unpacking to docker.io/library/final-project-478-fsguardian:latest 0.2s done
+#10 DONE 0.9s
+
+#11 resolving provenance for metadata file
+#11 DONE 0.1s
+[+] Running 3/3
+ ✔ final-project-478-fsguardian       Built                                                                                                                                                0.0s 
+ ✔ Network final-project-478_default  Created                                                                                                                                              0.3s 
+ ✔ Container fsguardian_runner        Created                                                                                                                                              0.5s 
+Attaching to fsguardian_runner
+fsguardian_runner  | Compiling Format String Guardian...
+fsguardian_runner  | Running all test cases...
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/safe/safe_01_int.c.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/safe/safe_01_int.c.c
+fsguardian_runner  | 
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | No format-string or buffer overflow problems found. 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/safe/safe_02_user_string.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/safe/safe_02_user_string.c
+fsguardian_runner  | 
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | No format-string or buffer overflow problems found. 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/safe/safe_03_snprintf_print.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/safe/safe_03_snprintf_print.c
+fsguardian_runner  | 
+fsguardian_runner  | [WARNING] tests/safe/safe_03_snprintf_print.c:8  VULNERABILITY: printf/fprintf WITH NON-LITERAL FORMAT (POSSIBLE HACKER & CRACKER CONTROL).
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | Total warnings: 1  (Check for False positives!) 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/safe/safe_04_scan_width.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/safe/safe_04_scan_width.c
+fsguardian_runner  | 
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | No format-string or buffer overflow problems found. 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/safe/safe_05_hex.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/safe/safe_05_hex.c
+fsguardian_runner  | 
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | No format-string or buffer overflow problems found. 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/safe/safe_06_multi.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/safe/safe_06_multi.c
+fsguardian_runner  | 
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | No format-string or buffer overflow problems found. 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/safe/safe_07_pointer.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/safe/safe_07_pointer.c
+fsguardian_runner  | 
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | No format-string or buffer overflow problems found. 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/safe/safe_08_len_bounded.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/safe/safe_08_len_bounded.c
+fsguardian_runner  | 
+fsguardian_runner  | [WARNING] tests/safe/safe_08_len_bounded.c:9  VULNERABILITY: printf/fprintf WITH NON-LITERAL FORMAT (POSSIBLE HACKER & CRACKER CONTROL).
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | Total warnings: 1  (Check for False positives!) 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/safe/safe_09_logging.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/safe/safe_09_logging.c
+fsguardian_runner  | 
+fsguardian_runner  | [WARNING] tests/safe/safe_09_logging.c:13  VULNERABILITY: printf/fprintf WITH NON-LITERAL FORMAT (POSSIBLE HACKER & CRACKER CONTROL).
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | Total warnings: 1  (Check for False positives!) 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/safe/safe_10_fixed_width.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/safe/safe_10_fixed_width.c
+fsguardian_runner  | 
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | No format-string or buffer overflow problems found. 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/safe/safe_11_conditional_user.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/safe/safe_11_conditional_user.c
+fsguardian_runner  | 
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | No format-string or buffer overflow problems found. 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/safe/safe_12_array_prtint.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/safe/safe_12_array_prtint.c
+fsguardian_runner  | 
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | No format-string or buffer overflow problems found. 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/safe/safe_13_pecent_esc.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/safe/safe_13_pecent_esc.c
+fsguardian_runner  | 
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | No format-string or buffer overflow problems found. 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/unsafe/unsafe_01_user_format.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/unsafe/unsafe_01_user_format.c
+fsguardian_runner  | 
+fsguardian_runner  | [WARNING] tests/unsafe/unsafe_01_user_format.c: 10 VULNERABLE USE OF GETS() CAN LEAD TO BUFFER OVERFLOW DUE TO NO BOUND CHECKS. PLEASE USE FGETS() FOR SAFE, SECURE CODE
+fsguardian_runner  | WARNING] tests/unsafe/unsafe_01_user_format.c: 10 VULNERABLE USE OF STRCPY() CAN LEAD TO BUFFER OVERFLOW. PLEASE USE STRNCPY()! 
+fsguardian_runner  | [WARNING] tests/unsafe/unsafe_01_user_format.c:15  VULNERABILITY: printf/fprintf WITH NON-LITERAL FORMAT (POSSIBLE HACKER & CRACKER CONTROL).
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | Total warnings: 3  (Check for False positives!) 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/unsafe/unsafe_02_printf.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/unsafe/unsafe_02_printf.c
+fsguardian_runner  | 
+fsguardian_runner  | [WARNING] tests/unsafe/unsafe_02_printf.c: 11 VULNERABLE USE OF GETS() CAN LEAD TO BUFFER OVERFLOW DUE TO NO BOUND CHECKS. PLEASE USE FGETS() FOR SAFE, SECURE CODE
+fsguardian_runner  | WARNING] tests/unsafe/unsafe_02_printf.c: 11 VULNERABLE USE OF STRCPY() CAN LEAD TO BUFFER OVERFLOW. PLEASE USE STRNCPY()! 
+fsguardian_runner  | [WARNING] tests/unsafe/unsafe_02_printf.c:15  VULNERABILITY: printf/fprintf WITH NON-LITERAL FORMAT (POSSIBLE HACKER & CRACKER CONTROL).
+fsguardian_runner  | [WARNING] tests/unsafe/unsafe_02_printf.c:18  VULNERABILITY: printf/fprintf WITH NON-LITERAL FORMAT (POSSIBLE HACKER & CRACKER CONTROL).
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | Total warnings: 4  (Check for False positives!) 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/unsafe/unsafe_03_missing_arg.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/unsafe/unsafe_03_missing_arg.c
+fsguardian_runner  | 
+fsguardian_runner  | [WARNING] tests/unsafe/unsafe_03_missing_arg.c:9  VULNERABILITY: printf/fprintf WITH NON-LITERAL FORMAT (POSSIBLE HACKER & CRACKER CONTROL).
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | Total warnings: 1  (Check for False positives!) 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/unsafe/unsafe_04_env_var.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/unsafe/unsafe_04_env_var.c
+fsguardian_runner  | 
+fsguardian_runner  | [WARNING] tests/unsafe/unsafe_04_env_var.c:10  VULNERABILITY: printf/fprintf WITH NON-LITERAL FORMAT (POSSIBLE HACKER & CRACKER CONTROL).
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | Total warnings: 1  (Check for False positives!) 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/unsafe/unsafe_05_logging.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/unsafe/unsafe_05_logging.c
+fsguardian_runner  | 
+fsguardian_runner  | [WARNING] tests/unsafe/unsafe_05_logging.c:14  VULNERABILITY: printf/fprintf WITH NON-LITERAL FORMAT (POSSIBLE HACKER & CRACKER CONTROL).
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | Total warnings: 1  (Check for False positives!) 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/unsafe/unsafe_06_bytes.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/unsafe/unsafe_06_bytes.c
+fsguardian_runner  | 
+fsguardian_runner  | [WARNING] tests/unsafe/unsafe_06_bytes.c:7  VULNERABILITY: %n FOUND IN FMT STR (BEWARE OF HACKERS & CRACKERS).
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | Total warnings: 1  (Check for False positives!) 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/unsafe/unsafe_07_scanf_pass_overflow.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/unsafe/unsafe_07_scanf_pass_overflow.c
+fsguardian_runner  | 
+fsguardian_runner  | [WARNING] tests/unsafe/unsafe_07_scanf_pass_overflow.c : 10 VULNERABLE USE OF SCANF, USING WITHOUT SETTING LIMIT. PLEASE USE SCANF(%(MAX SIZE -1)s)/n
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | Total warnings: 1  (Check for False positives!) 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/unsafe/unsafe_08_strcpy_overflow.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/unsafe/unsafe_08_strcpy_overflow.c
+fsguardian_runner  | 
+fsguardian_runner  | [WARNING] tests/unsafe/unsafe_08_strcpy_overflow.c: 12 VULNERABLE USE OF GETS() CAN LEAD TO BUFFER OVERFLOW DUE TO NO BOUND CHECKS. PLEASE USE FGETS() FOR SAFE, SECURE CODE
+fsguardian_runner  | WARNING] tests/unsafe/unsafe_08_strcpy_overflow.c: 12 VULNERABLE USE OF STRCPY() CAN LEAD TO BUFFER OVERFLOW. PLEASE USE STRNCPY()! 
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | Total warnings: 2  (Check for False positives!) 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/unsafe/unsafe_09_strcat_overflow.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/unsafe/unsafe_09_strcat_overflow.c
+fsguardian_runner  | 
+fsguardian_runner  | [WARNING] tests/unsafe/unsafe_09_strcat_overflow.c: 11 VULNERABLE USE OF GETS() CAN LEAD TO BUFFER OVERFLOW DUE TO NO BOUND CHECKS. PLEASE USE FGETS() FOR SAFE, SECURE CODE
+fsguardian_runner  | WARNING] tests/unsafe/unsafe_09_strcat_overflow.c: 11 VULNERABLE USE OF STRCPY() CAN LEAD TO BUFFER OVERFLOW. PLEASE USE STRNCPY()! 
+fsguardian_runner  | [WARNING] tests/unsafe/unsafe_09_strcat_overflow.c : 15 VULNERABLE USE OF STRCAT() DUE TO NO BOUND CHECKING. THIS CAN LEAD TO BUFFER OVERFLOW, PLEASE USE STRNCAT() FOR SAFE, SECURE CODE!
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | Total warnings: 3  (Check for False positives!) 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/unsafe/unsafe_10_argv_mem_leak.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/unsafe/unsafe_10_argv_mem_leak.c
+fsguardian_runner  | 
+fsguardian_runner  | [WARNING] tests/unsafe/unsafe_10_argv_mem_leak.c:7  VULNERABILITY: printf/fprintf WITH NON-LITERAL FORMAT (POSSIBLE HACKER & CRACKER CONTROL).
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | Total warnings: 1  (Check for False positives!) 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/unsafe/unsafe_11_snprintf_overflow.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/unsafe/unsafe_11_snprintf_overflow.c
+fsguardian_runner  | 
+fsguardian_runner  | [WARNING] tests/unsafe/unsafe_11_snprintf_overflow.c: 11 VULNERABLE USE OF GETS() CAN LEAD TO BUFFER OVERFLOW DUE TO NO BOUND CHECKS. PLEASE USE FGETS() FOR SAFE, SECURE CODE
+fsguardian_runner  | WARNING] tests/unsafe/unsafe_11_snprintf_overflow.c: 11 VULNERABLE USE OF STRCPY() CAN LEAD TO BUFFER OVERFLOW. PLEASE USE STRNCPY()! 
+fsguardian_runner  | [WARNING] tests/unsafe/unsafe_11_snprintf_overflow.c:15  VULNERABILITY: printf/fprintf WITH NON-LITERAL FORMAT (POSSIBLE HACKER & CRACKER CONTROL).
+fsguardian_runner  | [WARNING] tests/unsafe/unsafe_11_snprintf_overflow.c:17  VULNERABILITY: printf/fprintf WITH NON-LITERAL FORMAT (POSSIBLE HACKER & CRACKER CONTROL).
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | Total warnings: 4  (Check for False positives!) 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/unsafe/unsafe_12_direct_param_access.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/unsafe/unsafe_12_direct_param_access.c
+fsguardian_runner  | 
+fsguardian_runner  | [WARNING] tests/unsafe/unsafe_12_direct_param_access.c:10  VULNERABILITY: printf/fprintf WITH NON-LITERAL FORMAT (POSSIBLE HACKER & CRACKER CONTROL).
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | Total warnings: 1  (Check for False positives!) 
+fsguardian_runner  | 
+fsguardian_runner  | --- Scanning: tests/unsafe/unsafe_13_concat_format.c ---
+fsguardian_runner  | === Format String Guardian ===
+fsguardian_runner  | Scanning file: tests/unsafe/unsafe_13_concat_format.c
+fsguardian_runner  | 
+fsguardian_runner  | [WARNING] tests/unsafe/unsafe_13_concat_format.c : 12 VULNERABLE USE OF STRCAT() DUE TO NO BOUND CHECKING. THIS CAN LEAD TO BUFFER OVERFLOW, PLEASE USE STRNCAT() FOR SAFE, SECURE CODE!
+fsguardian_runner  | [WARNING] tests/unsafe/unsafe_13_concat_format.c : 13 VULNERABLE USE OF STRCAT() DUE TO NO BOUND CHECKING. THIS CAN LEAD TO BUFFER OVERFLOW, PLEASE USE STRNCAT() FOR SAFE, SECURE CODE!
+fsguardian_runner  | [WARNING] tests/unsafe/unsafe_13_concat_format.c:16  VULNERABILITY: printf/fprintf WITH NON-LITERAL FORMAT (POSSIBLE HACKER & CRACKER CONTROL).
+fsguardian_runner  | 
+fsguardian_runner  | === Scan Summary ===
+fsguardian_runner  | Total warnings: 3  (Check for False positives!) 
+fsguardian_runner exited with code 0
+(base) gisellehernandez@MacBook-Air Final-Project-478 %   
+
+
