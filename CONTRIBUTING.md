@@ -31,5 +31,5 @@ Format String Vulnerabilities.pptx
 8. Final Project Combined Alpha–Beta Integrated Release (1pager)
 - Tiffany and Giselle worked on this together. Giselle did the demo and Tiffany completed majority of the writing segments. In specific, Tiffany completed What Didn't Work and What Works. Giselle completed What's Next and the Demo. 
 
-
+9. Unclear of what to submit for artifacts/release/ so we just input evidence of our terminal after running.  
 
