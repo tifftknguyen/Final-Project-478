@@ -14,6 +14,7 @@
 
 // UTILITY FUNC
 
+// FINDS FIRST NON-WHITESPACE CHAR
 char *trim_whitespace(char *line) {
     while (*line != '\0' && isspace((unsigned char)*line)) {
         line++;
@@ -21,6 +22,7 @@ char *trim_whitespace(char *line) {
     return line;
 }
 
+// PERFORMS SIMPLE CHECK
 int exec_code(char *line, int *in_multiline_cmt) {
     char *trimmed = trim_whitespace(line);
 
@@ -34,7 +36,7 @@ int exec_code(char *line, int *in_multiline_cmt) {
         char *end_pos = strstr(line, "*/");
         if (end_pos != NULL) {
             *in_multiline_cmt = 0;
-\            return exec_code(end_pos + 2, in_multiline_cmt);
+            return exec_code(end_pos + 2, in_multiline_cmt);
         }
         return 0; // INSIDE MUTLI-LINE CMT
     }
@@ -61,7 +63,7 @@ int exec_code(char *line, int *in_multiline_cmt) {
     return 1;
 }
 
-// SEC CHECKS 
+// SECURITY CHECKS 
 
 int check_format_n(const char *line, const char *filename, int line_number) {
     const char *functions[] = {"printf(", "fprintf(", "sprintf(", "snprintf(", "syslog("};
@@ -104,3 +106,4 @@ int check_non_literal_printf(const char *line, const char *filename, int line_nu
     }
     return 0;
 }
+
