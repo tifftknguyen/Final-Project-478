@@ -117,7 +117,7 @@ int check_non_literal_printf(const char *line, const char *filename, int line_nu
 
     // STRCPY() WITH NO BOUND CHECKING 
     if (strstr(line, "gets(") != NULL){
-        printf("WARNING] %s: %d VULNERABLE USE OF STRCPY() CAN LEAD TO BUFFER OVERFLOW. PLEASE USE STRNCPY()! \n", 
+        printf("[WARNING] %s: %d VULNERABLE USE OF STRCPY() CAN LEAD TO BUFFER OVERFLOW. PLEASE USE STRNCPY()! \n", 
             filename, line_number);
         warning_message++;
     }
