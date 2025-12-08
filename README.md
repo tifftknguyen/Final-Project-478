@@ -10,8 +10,11 @@ https://www.usenix.org/legacy/events/sec01/full_papers/cowanbarringer/cowanbarri
 https://cecs478-lecture-app-pywv5.ondigitalocean.app/exploitation.html
 https://owasp.org/www-community/attacks/Format_string_attack
 
+Video Demo:
+https://youtu.be/VxFa8bqd96A?si=sdXwar2R00HsXOJM
+
 Problem Statement:
 Detecting unsafe format-string usage in code is a common security issue that often goes overlooked. Unsafe format strings like using, printf(user_input) can cause crashes, strange outputs, and even security issues in lower-level languages. These bugs are often small mistakes, but they can be hard to notice in code review. To help with this, we want to make a small Format-String Guardian tool that uses an lightweight static scanner and flags risky patterns. We’ll also build a 25-case regression suit to test the tool.
 
-Success Metrics
+Success Metrics: 
 For the Format-String Guardian the detection accuracy should have a high unsafe case detection rate and a low false positive rate (a specific number cannot be estimated at this time). The performance speed should be very quick. The checker should print clear messages like “Integrity failed at Line 7” and be easily legible. These metrics aren’t fully designed, but give a rough estimate and measure to show in the final report.
