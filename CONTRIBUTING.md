@@ -1,4 +1,6 @@
-# Tiffany Nguyen, Giselle Hernandez
+## Tiffany Nguyen, Giselle Hernandez
+
+# Contributing: Final Project Combined Alpha–Beta Integrated Release (12/07) 
 
 1. Proposal
 - Tiffany and Giselle had equal share in the work for the Proposal. Tiffany completed Problem Statement and Threat Model (Assets, Potentail Attackers, Attack Surfaces, Assumptions, Planned Defensive/Analytic APproach). Giselle completed the Success Metrics, Dataset / PCAP Plan, Risks and Ethics (Ethical, Legal, Privacy Concerns, Mitigation). Giselle and I both worked on the architecture together on draw.io.
@@ -11,6 +13,7 @@ Buffer Overflows_ Stack and Heap.pptx
 Buffer Overflow Vulnerabilities and Mitigations in C Programming.pptx
 
 Format String Vulnerabilities.pptx
+
 - This main file went pretty smoothly thanks to the detailed notes. We had a slight issue with trying to run all the tests automatically because we wanted to find a way to automate everything instead of using a script. In the real world scenario, we assumed that it would be more beneficial to run things from the files directly instead of writing a script. (Please correct us if this is wrong!)
 
 3. Safe
@@ -32,4 +35,15 @@ Format String Vulnerabilities.pptx
 - Tiffany and Giselle worked on this together. Giselle did the demo and Tiffany completed majority of the writing segments. In specific, Tiffany completed What Didn't Work and What Works. Giselle completed What's Next and the Demo. 
 
 9. Unclear of what to submit for artifacts/release/ so we just input evidence of our terminal after running.  
+
+
+# Contributing: Final Project Demo, Report, and Reproducibility Pack (12/10)
+
+1. Final Report
+- Tiffany worked on the Problem Statement, 
+
+2. Reproducibility Pack
+- Tiffany Nguyen
+
+# Code Ownership
 
