@@ -16,7 +16,6 @@
 #define GREEN "\x1B[32m"
 #define BLUE "\x1B[36m"
 #define YELLOW "\x1B[33m"
-#define MAGENTA "\033[0;35m"
 
 // UTILITY FUNCTOIN
 
@@ -210,11 +209,11 @@ int check_non_literal_printf(const char *line, const char *filename, int line_nu
             return 1;
         }
 
-        printf(MAGENTA "\n=== SCAN SUMMARY ===\n");
+        printf(GREEN "\n=== SCAN SUMMARY ===\n");
         if (warnings == 0) {
-            printf(MAGENTA "No format-string or buffer overflow problems found. \n\n\n");
+            printf(GREEN "No format-string or buffer overflow problems found. \n\n\n");
         } else {
-            printf(MAGENTA "Total Warnings: %d  (Check for False positives!) \n\n\n", warnings);
+            printf(GREEN "Total Warnings: %d  (Check for False positives!) \n\n\n", warnings);
         }
 
     return 0;
