@@ -76,7 +76,7 @@ int check_format_n(const char *line, const char *filename, int line_number) {
     if (strstr(line, "%n") != NULL) {
         for (size_t i = 0; i < sizeof(functions) / sizeof(functions[0]); i++) {
             if (strstr(line, functions[i]) != NULL) {
-                printf("[WARNING] %s:%d --> VULNERABILITY: %%n FOUND IN FMT STR (BEWARE OF HACKERS & CRACKERS).\n",
+                printf("[WARNING] %s:%d --> VULNERABILITY: %%n IN FORMAT STRING.\n",
                        filename, line_number);
                 return 1;
             }
@@ -104,7 +104,7 @@ int check_non_literal_printf(const char *line, const char *filename, int line_nu
 
         // IF FIRST NON-WHITESPACE CHAR ISN'T A QUOTE, WARNING
         if (*pos != '"' && *pos != '\0') {
-            printf(RED "[WARNING] %s:%d --> VULNERABILITY: printf/fprintf WITH NON-LITERAL FORMAT (POSSIBLE HACKER & CRACKER CONTROL).\n",
+            printf(RED "[WARNING] %s:%d --> VULNERABILITY: printf/fprintf WITH NON-LITERAL FORMAT.\n",
                    filename, line_number);
             return 1;
         }
@@ -116,21 +116,21 @@ int check_non_literal_printf(const char *line, const char *filename, int line_nu
 
     // GETS() HAS NO BOUND CHECKING
     if (strstr(line, "gets(") != NULL){
-        printf( RED "[WARNING] %s:%d -->VULNERABLE USE OF GETS() CAN LEAD TO BUFFER OVERFLOW DUE TO NO BOUND CHECKS. PLEASE USE FGETS() FOR SAFE, SECURE CODE\n", 
+        printf( RED "[WARNING] %s:%d --> VULNERABLE USE OF GETS() --> BUFF OVERFLOW, USE FGETS()!.\n", 
             filename, line_number);
         warning_message++;
     }
 
     // STRCPY() WITH NO BOUND CHECKING 
     if (strstr(line, "gets(") != NULL){
-        printf(RED "[WARNING] %s:%d --> VULNERABLE USE OF STRCPY() CAN LEAD TO BUFFER OVERFLOW. PLEASE USE STRNCPY()!\n", 
+        printf(RED "[WARNING] %s:%d --> VULNERABLE USE OF STRCPY() --> BUFF OVERFLOW, USE STRNCPY()!\n", 
             filename, line_number);
         warning_message++;
     }
 
     //STRCAT() WITH NO BOUND CHECKING 
     if (strstr(line, "strcat(") != NULL && strstr(line, "strncat(") == NULL){
-        printf(RED "[WARNING] %s:%d --> VULNERABLE USE OF STRCAT() DUE TO NO BOUND CHECKING. THIS CAN LEAD TO BUFFER OVERFLOW, PLEASE USE STRNCAT() FOR SAFE, SECURE CODE!\n",
+        printf(RED "[WARNING] %s:%d --> VULNERABLE USE OF STRCAT() --> BUFF OVERFLOW, USE STRNCAT()!\n",
             filename, line_number);
        warning_message++;
     }
@@ -138,7 +138,7 @@ int check_non_literal_printf(const char *line, const char *filename, int line_nu
     // SPRINTF() WITHOUT ANY BOUND CHECKS
     if (strstr(line, "sprintf(") != NULL){
         if (strstr(line, "sprintf(") == NULL){
-            printf(RED "[WARNING] %s:%d --> VULNERABLE USE OF SPRINTF() DUE TO NO BOUND CHECKING, THIS CAN LEAD TO BUFFER OVERFLOW. PLEASE USE SNPRINTF() INSTEAD FOR SAFE, SECURE CODE!\n",
+            printf(RED "[WARNING] %s:%d --> VULNERABLE USE OF SPRINTF() --> BUFF OVERFLOW, USE SNPRINTF()!\n",
                 filename, line_number);
             warning_message++;
         }
@@ -150,7 +150,7 @@ int check_non_literal_printf(const char *line, const char *filename, int line_nu
 
         // CHECKING FOR %s 
         if (fmt != NULL){
-            printf(RED "[WARNING] %s:%d --> VULNERABLE USE OF SCANF, USING WITHOUT SETTING LIMIT. PLEASE USE SCANF(%(MAX SIZE -1)s)\n", 
+            printf(RED "[WARNING] %s:%d --> VULNERABLE USE OF SCANF --> NO LIMIT, USE SCANF!(%(MAX SIZE -1)s)\n", 
            filename, line_number);
            warning_message++;
         }
