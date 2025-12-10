@@ -7,3 +7,8 @@ up:
 
 demo:
 	docker compose run --rm fsguardian
+
+scan: # FOR THE PURPOSE OF TROUBLESHOOTING ONE TEST CASE FILE
+	docker compose run --rm fsguardian ./fsguard $(f)
+
+
