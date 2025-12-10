@@ -32,7 +32,7 @@ Format String Vulnerabilities.pptx
 - Tiffany 
 
 8. Final Project Combined Alpha–Beta Integrated Release (1pager)
-- Tiffany and Giselle worked on this together. Giselle did the demo and Tiffany completed majority of the writing segments. In specific, Tiffany completed What Didn't Work and What Works. Giselle completed What's Next and the Demo. 
+- Tiffany and Giselle worked on this together. Tiffany did the Demo, Giselle and Tiffany worked on What Works and What's Next. Tiffany last minute added What Didn't work. 
 
 9. Unclear of what to submit for artifacts/release/ so we just input evidence of our terminal after running.  
 
@@ -40,10 +40,10 @@ Format String Vulnerabilities.pptx
 # Contributing: Final Project Demo, Report, and Reproducibility Pack (12/10)
 
 1. Final Report
-- Tiffany worked on the Problem Statement, 
+- Tiffany worked on Demo, Problem Statement, Threat Model (Assumptions, Attacker Capabilities, Trust Boundaries, Risks), and Results. 
+- Giselle worked on System Design (Architecture, Modeles, Protocol, Rationale), Methods, Limitations, and Future Work. 
 
 2. Reproducibility Pack
 - Tiffany Nguyen
 
-# Code Ownership
 
