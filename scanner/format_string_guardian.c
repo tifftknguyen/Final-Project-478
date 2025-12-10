@@ -213,7 +213,7 @@ int check_non_literal_printf(const char *line, const char *filename, int line_nu
         if (warnings == 0) {
             printf(GREEN "No format-string or buffer overflow problems found. \n\n\n");
         } else {
-            printf(GREEN "Total Warnings: %d  (Check for False positives!) \n\n\n", warnings);
+            printf(YELLOW "Total Warnings: %d  (Check for False positives!) \n\n\n", warnings);
         }
 
     return 0;
