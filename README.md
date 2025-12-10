@@ -10,7 +10,10 @@ https://www.usenix.org/legacy/events/sec01/full_papers/cowanbarringer/cowanbarri
 https://cecs478-lecture-app-pywv5.ondigitalocean.app/exploitation.html
 https://owasp.org/www-community/attacks/Format_string_attack
 
-Video Demo:
+Alpha-Beta Version Demo:
+https://youtu.be/VxFa8bqd96A
+
+Final Video Demo:
 https://youtu.be/VxFa8bqd96A?si=sdXwar2R00HsXOJM
 
 Problem Statement:
@@ -18,3 +21,10 @@ Detecting unsafe format-string usage in code is a common security issue that oft
 
 Success Metrics: 
 For the Format-String Guardian the detection accuracy should have a high unsafe case detection rate and a low false positive rate (a specific number cannot be estimated at this time). The performance speed should be very quick. The checker should print clear messages like “Integrity failed at Line 7” and be easily legible. These metrics aren’t fully designed, but give a rough estimate and measure to show in the final report.
+
+How to run on your Docker for all 26 test cases:
+make clean && make up && make demo   
+
+How to run on your Docker for one test case:
+ make scan f=tests/unsafe/unsafe_01_user_format.c
+
