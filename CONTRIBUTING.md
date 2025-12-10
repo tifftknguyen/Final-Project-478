@@ -49,4 +49,6 @@ Format String Vulnerabilities.pptx
 3. Release
 - Giselle
 
+4. Google Slides
+- We both worked on the slides equally.
 
