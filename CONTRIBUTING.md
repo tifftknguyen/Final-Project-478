@@ -41,7 +41,7 @@ Format String Vulnerabilities.pptx
 
 1. Final Report
 - Tiffany worked on Demo, Problem Statement, Threat Model (Assumptions, Attacker Capabilities, Trust Boundaries, Risks), and Results. 
-- Giselle worked on System Design (Architecture, Modeles, Protocol, Rationale), Methods, Limitations, and Future Work. 
+- Giselle helped with the Demo and worked on System Design (Architecture, Modules, Protocol, Rationale), Methods, Limitations, and Future Work. 
 
 2. Reproducibility Pack
 - Tiffany Nguyen
