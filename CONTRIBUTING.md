@@ -46,4 +46,7 @@ Format String Vulnerabilities.pptx
 2. Reproducibility Pack
 - Tiffany Nguyen
 
+3. Release
+- Giselle
+
 
