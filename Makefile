@@ -11,4 +11,3 @@ demo:
 scan: # FOR THE PURPOSE OF TROUBLESHOOTING ONE TEST CASE FILE
 	docker compose run --rm fsguardian ./fsguard $(t)
 
-
