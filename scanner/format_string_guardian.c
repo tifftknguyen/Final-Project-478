@@ -150,7 +150,7 @@ int check_non_literal_printf(const char *line, const char *filename, int line_nu
 
         // CHECKING FOR %s 
         if (fmt != NULL){
-            printf(RED "[WARNING] %s:%d --> VULNERABLE USE OF SCANF --> NO LIMIT, USE SCANF!(%(MAX SIZE -1)s)\n", 
+            printf(RED "[WARNING] %s:%d --> VULNERABLE USE OF SCANF --> NO LIMIT, USE SCANF(%(MAX SIZE -1)s)\n", 
            filename, line_number);
            warning_message++;
         }
