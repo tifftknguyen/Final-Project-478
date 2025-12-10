@@ -70,7 +70,7 @@ int check_format_n(const char *line, const char *filename, int line_number) {
     if (strstr(line, "%n") != NULL) {
         for (size_t i = 0; i < sizeof(functions) / sizeof(functions[0]); i++) {
             if (strstr(line, functions[i]) != NULL) {
-                printf("[WARNING] %s:%d  VULNERABILITY: %%n FOUND IN FMT STR (BEWARE OF HACKERS & CRACKERS).\n",
+                printf("[WARNING] %s:%d  VULNERABILITY: %%n FOUND IN FMT STR (BEWARE OF HACKERS & CRACKERS).",
                        filename, line_number);
                 return 1;
             }
@@ -98,7 +98,7 @@ int check_non_literal_printf(const char *line, const char *filename, int line_nu
 
         // IF FIRST NON-WHITESPACE CHAR ISN'T A QUOTE, WARNING
         if (*pos != '"' && *pos != '\0') {
-            printf("[WARNING] %s:%d  VULNERABILITY: printf/fprintf WITH NON-LITERAL FORMAT (POSSIBLE HACKER & CRACKER CONTROL).\n",
+            printf("[WARNING] %s:%d  VULNERABILITY: printf/fprintf WITH NON-LITERAL FORMAT (POSSIBLE HACKER & CRACKER CONTROL).",
                    filename, line_number);
             return 1;
         }
@@ -110,21 +110,21 @@ int check_non_literal_printf(const char *line, const char *filename, int line_nu
 
     // GETS() HAS NO BOUND CHECKING
     if (strstr(line, "gets(") != NULL){
-        printf("[WARNING] %s: %d VULNERABLE USE OF GETS() CAN LEAD TO BUFFER OVERFLOW DUE TO NO BOUND CHECKS. PLEASE USE FGETS() FOR SAFE, SECURE CODE\n", 
+        printf("[WARNING] %s: %d VULNERABLE USE OF GETS() CAN LEAD TO BUFFER OVERFLOW DUE TO NO BOUND CHECKS. PLEASE USE FGETS() FOR SAFE, SECURE CODE", 
             filename, line_number);
         warning_message++;
     }
 
     // STRCPY() WITH NO BOUND CHECKING 
     if (strstr(line, "gets(") != NULL){
-        printf("[WARNING] %s: %d VULNERABLE USE OF STRCPY() CAN LEAD TO BUFFER OVERFLOW. PLEASE USE STRNCPY()! \n", 
+        printf("[WARNING] %s: %d VULNERABLE USE OF STRCPY() CAN LEAD TO BUFFER OVERFLOW. PLEASE USE STRNCPY()!", 
             filename, line_number);
         warning_message++;
     }
 
     //STRCAT() WITH NO BOUND CHECKING 
     if (strstr(line, "strcat(") != NULL && strstr(line, "strncat(") == NULL){
-        printf("[WARNING] %s : %d VULNERABLE USE OF STRCAT() DUE TO NO BOUND CHECKING. THIS CAN LEAD TO BUFFER OVERFLOW, PLEASE USE STRNCAT() FOR SAFE, SECURE CODE!\n",
+        printf("[WARNING] %s : %d VULNERABLE USE OF STRCAT() DUE TO NO BOUND CHECKING. THIS CAN LEAD TO BUFFER OVERFLOW, PLEASE USE STRNCAT() FOR SAFE, SECURE CODE!",
             filename, line_number);
        warning_message++;
     }
@@ -132,7 +132,7 @@ int check_non_literal_printf(const char *line, const char *filename, int line_nu
     // SPRINTF() WITHOUT ANY BOUND CHECKS
     if (strstr(line, "sprintf(") != NULL){
         if (strstr(line, "sprintf(") == NULL){
-            printf("[WARNING] %s : %d VULNERABLE USE OF SPRINTF() DUE TO NO BOUND CHECKING, THIS CAN LEAD TO BUFFER OVERFLOW. PLEASE USE SNPRINTF() INSTEAD FOR SAFE, SECURE CODE!\n",
+            printf("[WARNING] %s : %d VULNERABLE USE OF SPRINTF() DUE TO NO BOUND CHECKING, THIS CAN LEAD TO BUFFER OVERFLOW. PLEASE USE SNPRINTF() INSTEAD FOR SAFE, SECURE CODE!",
                 filename, line_number);
             warning_message++;
         }
@@ -144,7 +144,7 @@ int check_non_literal_printf(const char *line, const char *filename, int line_nu
 
         // CHECKING FOR %s 
         if (fmt != NULL){
-            printf("[WARNING] %s : %d VULNERABLE USE OF SCANF, USING WITHOUT SETTING LIMIT. PLEASE USE SCANF(%(MAX SIZE -1)s)/n", 
+            printf("[WARNING] %s : %d VULNERABLE USE OF SCANF, USING WITHOUT SETTING LIMIT. PLEASE USE SCANF(%(MAX SIZE -1)s)", 
            filename, line_number);
            warning_message++;
         }
@@ -193,8 +193,8 @@ int check_non_literal_printf(const char *line, const char *filename, int line_nu
             printf("USAGE: %s <tests-directory>\n", argv[0]);
             return -1;
         }
-        printf("=== Format String Guardian ===\n");
-        printf("Scanning file: %s\n\n", argv[1]);
+        printf("=== FORMAT STRING GUARDIAN BEGINS ===\n");
+        printf("Scanning File: %s", argv[1]);
 
         warnings = scan_file(argv[1]);
 
@@ -203,11 +203,11 @@ int check_non_literal_printf(const char *line, const char *filename, int line_nu
             return 1;
         }
 
-        printf("\n=== Scan Summary ===\n");
+        printf("\n=== SCAN SUMMARY ===\n");
         if (warnings == 0) {
-            printf("No format-string or buffer overflow problems found. \n");
+            printf("No format-string or buffer overflow problems found. \n\n\n");
         } else {
-            printf("Total warnings: %d  (Check for False positives!) \n", warnings);
+            printf("Total Warnings: %d  (Check for False positives!) \n\n\n", warnings);
         }
 
     return 0;
